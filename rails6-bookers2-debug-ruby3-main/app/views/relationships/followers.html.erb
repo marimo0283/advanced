@@ -1,6 +1,7 @@
+<div class="container">
 <h2>Follower Users</h2>
-<% if users.exists? %>
-  <% users.each do |user| %>
+<% if @users.exists? %>
+  <% @users.each do |user| %>
     <table>
       <thead>
         <tr>
@@ -26,3 +27,4 @@
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>
+</div>
