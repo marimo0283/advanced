@@ -1,20 +1,15 @@
 class SearchesController < ApplicationController
-  before_action :authenticate_user!
+	before_action :authenticate_user!
 
-  def search
-    @range = params[:range]
-
-    if @range == "User"
-      @users = User.looks(params[:search], params[:word])
-    else
-      @books = Book.looks(params[:search], params[:word])
+    def search
+      @model=params[:model]
+      @content=params[:content]
+      @method=params[:method]
+      if @model == 'user'
+        @records=User.search_for(@content,@method)
+      else
+        @records=Book.search_for(@content,@method)
+      end
     end
-    redirect_to search_index_path
-  end
-
-  def index
-    @users = User.looks(params[:search], params[:word])
-    @books = Book.looks(params[:search], params[:word])
-  end
 
 end
