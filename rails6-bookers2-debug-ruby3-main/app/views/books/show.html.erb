@@ -41,8 +41,7 @@
           <% end %>
         </tr>
       </table>
-    </div>
-    <table>
+      <table>
       <tbody>
         <% @book.book_comments.each do |book_comment| %>
         <tr>
@@ -68,5 +67,7 @@
         <%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
       <% end %>
     </div>
+    </div>
+    
   </div>
 </div>
